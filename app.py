@@ -11,7 +11,7 @@ options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 
 driver = webdriver.Chrome(options=options)
 
-driver.get("https://medium.com")
+driver.get("https://google.com")
 
 phone_number = '+5516992210406'
 group = 'Hegk6ZpOcI0E3ptoCj9c40'
