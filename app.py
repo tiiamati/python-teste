@@ -1,13 +1,7 @@
+import pywhatkit
 from selenium import webdriver
 import os
-from selenium.webdriver.chrome.service import Service
-
-print("GOOGLE_CHROME_BIN>>>>>>")
-print(os.environ.get("GOOGLE_CHROME_BIN"))
-print("CHROMEDRIVER_PATH>>>>>>")
-print(os.environ.get("CHROMEDRIVER_PATH"))
-
-# service = Service(executable_path='./chromedriver.exe')
+from unidecode import unidecode
 
 options = webdriver.ChromeOptions()
 options.add_argument("--headless")
@@ -19,5 +13,18 @@ driver = webdriver.Chrome(options=options)
 
 driver.get("https://medium.com")
 
-print(driver.page_source)
+phone_number = '+5516992210406'
+group = 'Hegk6ZpOcI0E3ptoCj9c40'
+waiting_time_to_send = 15
+close_tab = True
+waiting_time_to_close = 5
+
+try:
+    pywhatkit.sendwhatmsg_to_group_instantly(group, unidecode("teste"), waiting_time_to_send, close_tab,
+                                             waiting_time_to_close)
+except Exception as e:
+    print(e)
+
+print("Mensagem Enviada")
+
 print("Finished!")
