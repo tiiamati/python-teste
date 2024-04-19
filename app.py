@@ -13,6 +13,8 @@ driver = webdriver.Chrome(options=options)
 
 driver.get("https://google.com")
 
+print("abriu chrome")
+
 phone_number = '+5516992210406'
 group = 'Hegk6ZpOcI0E3ptoCj9c40'
 waiting_time_to_send = 15
